@@ -1,0 +1,26 @@
+ Console.Write("   Please Enter Item Price:  ");
+            string purchaseAmount = Console.ReadLine();
+            decimal amountNeeded = decimal.Parse(purchaseAmount);
+           
+
+            Console.Write("   Please Enter Cash Recieved:  ");
+            string cashRecieved = Console.ReadLine();
+           decimal amountGiven = decimal.Parse(cashRecieved);
+
+            decimal changeOwed = amountGiven - amountNeeded;
+
+            decimal twentyDollarBill, tenDollarBill, fiveDollarBill, oneDollarBill, quarter, dime, nickel, penny;
+
+             twentyDollarBill = (int)(changeOwed / 20.00m);
+             tenDollarBill = (int)((changeOwed % 20.00m) / 10.00m);
+             fiveDollarBill = (int)(((changeOwed % 20.00m) % 10.00m) / 5.00m);
+             oneDollarBill = (int)((((changeOwed % 20.00m) % 10.00m) % 5.00m) / 1.00m);
+             quarter = (int)(((((changeOwed % 20.00m) % 10.00m) % 5.00m) % 1.00m) / .25m);
+             dime = (int)((((((changeOwed % 20.00m) % 10.00m) % 5.00m) / 1.00m) % .25m) / .10m);
+             nickel = (int)(((((((changeOwed % 20.00m) % 10.00m) % 5.00m) / 1.00m) % .25m) % .10m) / .05m);
+             penny = (int)((((((((changeOwed % 20.00m) % 10.00m) % 5.00m) / 1.00m) % .25m) % .10m) % .05m) / .01m);
+
+            Console.WriteLine("   CHANGE DUE:\n\n     {0} -- $20 Bill/s\n     {1} -- $10 Bill/s\n     {2} -- $5 Bill/s\n     {3} -- $1 Bill/s\n     {4} -- quarter/s\n     {5} -- dime/s\n     {6} -- nickel/s\n     {7} -- penny/ies!\n", twentyDollarBill, tenDollarBill, fiveDollarBill, oneDollarBill, quarter, dime, nickel, penny);
+        }
+    }
+}
